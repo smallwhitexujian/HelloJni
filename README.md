@@ -2,9 +2,11 @@
 
 开始了。 在AS中新建一个Project，然后再新建一个class文件HelloJNI，在内部声明native方法（jni使用的定义）。
 
-	public class HelloJNI {
-	    public native String getClanguageString();
-	}
+	public native String getClanguageString();
+
+	    static {
+	        System.loadLibrary("hellojni");
+	    }
 在工程的文件入口Activity写下如下代码
 
 	public class MainActivity extends AppCompatActivity {
